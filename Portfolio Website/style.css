@@ -1,0 +1,182 @@
+* {
+    padding: 0px;
+    color: white;
+}
+body {
+    margin: 0px;
+    background-color: #1b1b1b;
+}
+
+/******* NAVBAR *******/
+.navbar{
+    display: flex;
+    /*background-color: #121212;  ENABLE IF DESIRED      */ 
+    height: 13.5vh;
+}
+.navbar ul{
+    width: 100%;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    list-style-type: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.navbar ul a{
+    margin: 50px;
+    font-size: 2em;
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar ul a:hover{
+    color: #c7bdbd;
+    transition: color 50ms ease-in;
+}
+#current_nav_page{
+    color: #D72638 ;
+    pointer-events: none;
+}
+.navbar .logo img{
+    border-radius: 20px;
+    height: 13.5vh;
+    margin-left: 10px;
+}
+.navbar .logo:hover{
+    cursor: pointer;
+}
+
+
+/******* MAIN *******/
+/* Home */
+.introduction {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2em;
+    display: flex;
+    height: calc(100vh - 13.5vh);
+}
+.intro-text {
+    display: inline;
+    align-content: start;
+    margin-left: 135px;
+    background-color: darkgra;
+    width: 150vh;
+}
+.intro-text h1,h2 {
+    color: #D72638;
+    margin-top: 5vh;
+}
+.profile_img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+.profile_img img{
+    height: 65vh;
+    width: 50%; /*CHANGE LATER*/
+    border: 1em solid #D72638;
+    border-radius: 5em;
+}
+
+/* ABOUT */
+.page_title { /* for titles in about,proojects, contact */
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2em;
+}
+.page_title h1 {
+    color: #D72638;
+    margin-top: 5vh;
+}
+.title_hr {
+    width: 50%;
+}
+.about_content {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: inline-block;
+    margin-left: 135px;
+    margin-right: 135px;
+    font-size: 2em;
+}
+.paragraph_small{
+    font-size: .8em;     /* default size of <p> */
+    font-weight: normal; /* removes heading bold */
+    line-height: 1.5;    /* matches paragraph spacing */   
+}
+#skills_ul{
+    margin-left: 1em;
+}
+.about_skills{
+    width: 100%;
+    display: flex;
+    justify-content:space-between ;
+    margin-top: -35px;
+    
+}
+#row1_hobbies{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: -35px;
+}
+#volleyball {
+    display: flex;
+    width: 50%;
+    margin-right: 2em;
+}
+#volleyball_img{
+    margin-left: 1em;
+}
+#dogs_hobby{
+    display: flex;
+    width: 50%;
+}
+#row2_hobbies{
+    display: flex;
+    justify-content: space-evenly;
+}
+#cooking_hobby{
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+/* PROJECTS */
+.projects_content {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: inline-block;
+    margin-left: 135px;
+    margin-right: 135px;
+    font-size: 2em;
+}
+#projects_description{
+    margin-left: 1em;
+}
+
+/* CONTACT PAGE */
+.contact_content {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 135px;
+    margin-right: 135px;
+    font-size: 2em;
+}
+#contact_titles{
+    display: flex;
+    justify-content: space-evenly;
+}
+#contact_descriptions{
+    display: flex;
+    justify-content: space-evenly;
+}
+#contact_left_description{
+    width: 100%;
+}
+#contact_right_description{
+    border: 1px solid;
+    width: 100%;
+}
+#other_links{
+    display: flex;
+    margin-left: 200px;
+}
+#other_links img{
+    margin-left: 50px;
+    margin-right: 50px;
+}
