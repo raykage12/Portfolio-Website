@@ -1,0 +1,217 @@
+/* ===== Base / Reset ===== */
+:root{
+  --bg:#1b1b1b;
+  --text:#ffffff;
+  --accent:#D72638;
+  --muted:#c7bdbd;
+  --radius-xl:2rem;
+}
+
+*{ box-sizing: border-box; margin:0; padding:0; }
+html, body{ height:100%; }
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height:1.5;
+}
+
+/* Remove the global color rule from * { ... } in old CSS; color now lives on body. */
+
+/* ===== Navbar ===== */
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: clamp(0.5rem, 1.2vw, 1rem) clamp(1rem, 4vw, 3rem);
+  gap:1rem;
+}
+.navbar .logo img{
+  height: clamp(40px, 7vh, 64px);
+  border-radius: 12px;
+}
+.navbar ul{
+  display:flex;
+  align-items:center;
+  list-style:none;
+  gap: clamp(0.5rem, 2.2vw, 2rem);
+  flex-wrap:wrap;
+}
+.navbar ul a{
+  text-decoration:none;
+  font-weight:700;
+  font-size: clamp(1rem, 2.1vw, 1.25rem);
+  padding:.35rem .5rem;
+  color:var(--text);
+}
+.navbar ul a:hover{ color:var(--muted); transition: color .15s ease-in-out; }
+#current_nav_page{ color:var(--accent); pointer-events:none; }
+
+/* ===== Sections: shared container ===== */
+.page_title,
+.about_content,
+.projects_content,
+.contact_content,
+.introduction{
+  padding-inline: clamp(1rem, 5vw, 8rem);
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* ===== Home ===== */
+.introduction{
+  display:flex;
+  align-items:center;
+  gap: clamp(1rem, 4vw, 3rem);
+  padding-block: clamp(1rem, 5vh, 3rem);
+  /* Remove fixed viewport-height layouts; let content define height */
+}
+.intro-text{
+  /* fix bad token 'darkgra' and remove fixed widths/margins */
+  width: 100%;
+}
+.intro-text h1, .intro-text h2{
+  color:var(--accent);
+}
+.intro-text h1{ font-size: clamp(1.6rem, 4.2vw, 3rem); margin-top:.25rem; }
+.intro-text h2{ font-size: clamp(1.1rem, 2.8vw, 1.6rem); font-weight:700; }
+.intro-text p{ font-size: clamp(1rem, 2.2vw, 1.125rem); margin-top: .75rem; color: #eaeaea; }
+
+.profile_img{
+  display:flex; justify-content:center; width:100%;
+}
+.profile_img img{
+  width: min(45vw, 420px);
+  max-width: 100%;
+  height:auto;
+  border: .8em solid var(--accent);
+  border-radius: 2.5em;
+}
+
+/* ===== Page titles ===== */
+.page_title{
+  text-align:center;
+  margin-top: clamp(1rem, 4vh, 2.5rem);
+}
+.page_title h1{
+  color:var(--accent);
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+}
+.page_title hr{
+  width:min(80%, 640px);
+  margin: .5rem auto 0;
+  border:0; height:2px; background:#2a2a2a;
+}
+
+/* ===== About ===== */
+.about_content{
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  margin-top: 1rem;
+}
+.paragraph_small{ font-size: .9em; font-weight:400; line-height:1.5; }
+#skills_ul{ margin-left: 1em; }
+.about_skills{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: clamp(.75rem, 2vw, 1.5rem);
+  margin-top: .5rem;
+}
+#row1_hobbies, #row2_hobbies{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: clamp(.75rem, 2vw, 1.25rem);
+  align-items:start;
+  margin-top: .75rem;
+}
+#volleyball, #dogs_hobby{ display:flex; gap:1rem; }
+#volleyball_img, #dogs_img{ margin-left: 0; }
+.about_content img{ max-width:100%; height:auto; border-radius: 12px; }
+
+/* ===== Projects ===== */
+.projects_content{
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  margin-top: 1rem;
+}
+#projects_description{ margin-left: 1em; }
+
+/* ===== Contact ===== */
+.contact_content{
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  margin-top: 1rem;
+}
+#contact_titles{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: end;
+}
+#contact_descriptions{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: .75rem;
+}
+#contact_left_description h3 a{ color: var(--text); text-decoration: underline; }
+
+.contact-inputs{
+  width:100%;
+  height: 50px;
+  border:none;
+  outline:none;
+  border-radius:10px;
+  color:#111;
+  background:#fff;
+  font-weight:700;
+  font-size:1.05rem;
+  padding-left: 20px;
+  margin-bottom: 16px; /* tighter spacing on small screens */
+}
+#contact_right_description textarea{
+  height: 160px;
+  font-size: 1.05rem;
+  padding: 12px 16px;
+}
+#contact_right_description{
+  display:flex;
+  flex-direction:column;
+  align-items:start;
+  gap: 16px;
+}
+#contact_right_description button{
+  height:auto;
+  min-height:48px;
+  padding: .8rem 1.25rem;
+  font-size: 1rem;
+  background:var(--accent);
+  border-radius: 14px;
+  color:#fff;
+  font-weight:800;
+  border:none;
+  cursor:pointer;
+}
+#contact_right_description button:hover{ background:#bf6e6e; }
+
+/* ===== Responsive Breakpoints ===== */
+
+/* Tablets and down */
+@media (max-width: 1024px){
+  .introduction{ flex-direction: column; text-align:center; }
+  .profile_img img{ width: min(60vw, 420px); }
+  .about_skills{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  #row1_hobbies, #row2_hobbies{ grid-template-columns: 1fr; }
+}
+
+/* Phones */
+@media (max-width: 640px){
+  .navbar{ justify-content:center; }
+  .navbar ul{ gap:.5rem; }
+  .navbar .logo img{ height:44px; }
+  .page_title{ margin-top: 1rem; }
+  #contact_titles, #contact_descriptions{ grid-template-columns: 1fr; }
+  .profile_img img{ width: 80vw; }
+}
+
+/* Very small phones */
+@media (max-width: 380px){
+  .navbar ul a{ padding:.25rem .4rem; }
+}
